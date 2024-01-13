@@ -6,6 +6,7 @@
   "author": {
     "name": "Coolrox95"
   },
+  "types": "src/",
   "files": [
     "**/src/gameTypes",
     "**/src/libraryTypes"
