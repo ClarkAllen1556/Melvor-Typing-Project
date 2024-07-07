@@ -54,8 +54,6 @@ declare function exportSave(update?: boolean): Promise<void>;
 declare function setSlotToSaveString(slotID: number, saveString: string): Promise<void>;
 /** Attempts to import a save to the specified slot. Returns a promise which if resolved to true means the import was a success. */
 declare function importSaveToSlot(saveString: string, slotID: number): Promise<boolean>;
-declare function openDeleteMelvorCloudAccount(): void;
-declare function confirmDeleteMelvorCloudAccount(): void;
 /**
  * Copies a given string to the clipboard
  * @param input Text to copy to the clipboard
@@ -154,16 +152,14 @@ declare let inFocus: boolean;
 declare const onloadEvent: (accessCheck?: boolean) => void;
 declare function confirmedAuthenticated(): void;
 declare function checkIfAuthenticated(): Promise<void>;
-declare const INTERFACE_VERSION = 102;
+declare const INTERFACE_VERSION = 184;
 declare function loadGameInterface(accessCheck?: boolean): Promise<void>;
-declare const DATA_VERSION = 252;
+declare const DATA_VERSION = 497;
 declare function changePageCharacterSelection(page: CharacterSelectPage): void;
-declare const showOctaviusPlushieAnnouncement = false;
-declare const showMarcyPlushieAnnouncement = false;
 /** Future announcement handler that will occur dynamically. For now this is hard coded. */
 declare function updateUIForAnnouncements(): void;
 declare function hideUIForAnnouncement(id: number): void;
-declare const maxSaveSlots = 6;
+declare const maxSaveSlots = 8;
 declare const enum SaveLoadError {
     Empty = 0,
     Corrupt = 1,
@@ -183,6 +179,8 @@ declare let isCreatingSave: boolean;
 /** Attempts to load the save in the string */
 declare function loadSaveFromString(saveString: string): Promise<void>;
 declare function processSaveLoadError(slotID: number, isCloud: boolean, error: unknown): void;
+declare function showTitleScreenError(error: unknown, title: string): void;
+declare function getTitleScreenErrorLog(error: unknown, title: string, modError: Modding.ModError): string;
 /** Attempts to load the local save in the given save slot */
 declare function loadLocalSave(slotID: number): Promise<void>;
 /** Attempts to load the cloud save in the given save slot */

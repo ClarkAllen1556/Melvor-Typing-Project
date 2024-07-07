@@ -23,6 +23,11 @@ declare const enum MapTextureQuality {
     Medium = 1,
     High = 2
 }
+declare const enum SidebarLevelSetting {
+    Both = 0,
+    Normal = 1,
+    Abyssal = 2
+}
 interface BooleanSettings {
     /** Skills will continue to run even if the bank is full */
     continueIfBankFull: boolean;
@@ -164,6 +169,28 @@ interface BooleanSettings {
     toggleDiscordRPC: boolean;
     /** Enable All but 1 donation for generic artefacts */
     genericArtefactAllButOne: boolean;
+    /** If currency notifications for abyssal pieces should be shown */
+    showAbyssalPiecesNotifications: boolean;
+    /** If currency notifications for abyssal slayer coins should be shown */
+    showAbyssalSlayerCoinNotifications: boolean;
+    /** If monsters will be corrupted at the start of a fight, at the cost of soul points */
+    enablePermaCorruption: boolean;
+    /** If Abyssal Pieces should show next to the shop instead of GP */
+    showAPNextToShopSidebar: boolean;
+    /** If Abyssal Slayer Coins should show next to slayer instead of SC */
+    showASCNextToSlayerSidebar: boolean;
+    /** Notifications v2: Show Abyssal XP Notifications */
+    showAbyssalXPNotifications: boolean;
+    /** Enable double click to equip items from Bank */
+    enableDoubleClickEquip: boolean;
+    /** Enable double click to open items from Bank */
+    enableDoubleClickOpen: boolean;
+    /** Enable double click to bury items from Bank */
+    enableDoubleClickBury: boolean;
+    /** If Soul Points should show next to Prayer instead of PP */
+    showSPNextToPrayerSidebar: boolean;
+    /** If Bank tabs should be sticky */
+    enableStickyBankTabs: boolean;
 }
 interface ChoiceSettings {
     /** If special attack modifiers should use neutral colours */
@@ -186,6 +213,7 @@ interface ChoiceSettings {
     backgroundImage: number;
     /** Determines the maximum framerate to run the cartography map at. -1 indicates native screen refreshrate */
     cartographyFrameRateCap: number;
+    sidebarLevels: SidebarLevelSetting;
 }
 interface SettingData<T> {
     /** The current value of the setting */
@@ -308,6 +336,18 @@ declare class Settings implements EncodableObject, BooleanSettings, ChoiceSettin
     get toggleBirthdayEvent(): boolean;
     get toggleDiscordRPC(): boolean;
     get genericArtefactAllButOne(): boolean;
+    get showAbyssalPiecesNotifications(): boolean;
+    get showAbyssalSlayerCoinNotifications(): boolean;
+    get enablePermaCorruption(): boolean;
+    get showAPNextToShopSidebar(): boolean;
+    get showASCNextToSlayerSidebar(): boolean;
+    get sidebarLevels(): SidebarLevelSetting;
+    get showAbyssalXPNotifications(): boolean;
+    get enableDoubleClickEquip(): boolean;
+    get enableDoubleClickOpen(): boolean;
+    get enableDoubleClickBury(): boolean;
+    get showSPNextToPrayerSidebar(): boolean;
+    get enableStickyBankTabs(): boolean;
     /** The set of mastery namespaces that should be hidden in the spend mastery modal */
     hiddenMasteryNamespaces: Set<string>;
     constructor(game: Game);

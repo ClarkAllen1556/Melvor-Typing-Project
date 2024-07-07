@@ -107,7 +107,7 @@ declare const enum OldSkillShopPurchaseIDs {
     SignOfTheStars = 61,
     SummonersAltar = 62
 }
-declare enum EquipmentSlots {
+declare enum OldEquipmentSlotIDs {
     Helmet = 0,
     Platebody = 1,
     Platelegs = 2,
@@ -124,13 +124,6 @@ declare enum EquipmentSlots {
     Summon2 = 13,
     Consumable = 14,
     Gem = 15
-}
-declare enum SpellTypes {
-    Air = 0,
-    Water = 1,
-    Earth = 2,
-    Fire = 3,
-    Nature = 4
 }
 declare type SlayerTier = 'Easy' | 'Normal' | 'Hard' | 'Elite' | 'Master' | 'Legendary' | 'Mythical';
 declare enum SlayerTierID {
@@ -2985,7 +2978,9 @@ declare enum AmmoTypeID {
     Bolts = 1,
     Javelins = 2,
     ThrowingKnives = 3,
-    None = 4
+    None = 4,
+    AbyssalArrows = 5,
+    AbyssalBolts = 6
 }
 /** Hex codes of the various theme colours used in the game */
 declare const enum Colours {
@@ -3015,4 +3010,4 @@ declare const enum Colours {
     WhiteSmoke = 16119285,
     Amethyst = 8671702
 }
-declare const TODO_REPLACE_MEDIA = "assets/media/main/missing_artwork.png";
+declare const TODO_REPLACE_MEDIA = Assets.Missing;
